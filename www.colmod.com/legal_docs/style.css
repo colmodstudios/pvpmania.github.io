@@ -1,0 +1,165 @@
+/* Basic Reset & Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1, h2, h3 {
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+    margin-top: 25px;
+    transition: color 0.3s ease;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+.action-required {
+    background-color: #fce8e6;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.note {
+    border-left: 4px solid;
+    padding: 10px;
+    margin: 15px 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Dark/Light Mode Specific CSS Variables --- */
+
+/* Define CSS Variables for light mode (default) */
+:root {
+    --bg-color: #f9f9f9; /* General background */
+    --text-color: #333; /* General text */
+    --container-bg: #fff; /* Container background */
+    --heading-color: #2c3e50; /* Headings */
+    --border-color: #eee; /* Borders */
+    --action-required-color: #e74c3c; /* Text for action required */
+    --note-bg: #f0f8ff; /* Note box background */
+    --note-border: #3498db; /* Note box border */
+    --note-text: #34495e; /* Note box text */
+    --box-shadow-color: rgba(0,0,0,0.1); /* Box shadow */
+}
+
+/* Define CSS Variables for dark mode */
+body.dark-mode {
+    --bg-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --container-bg: #34495e;
+    --heading-color: #ecf0f1;
+    --border-color: #44667d;
+    --action-required-color: #ffcccc; /* Lighter red for visibility */
+    --note-bg: #4a627a;
+    --note-border: #6cb6eb;
+    --note-text: #e0e0e0;
+    --box-shadow-color: rgba(0,0,0,0.3);
+}
+
+/* Apply CSS Variables to elements */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    background-color: var(--container-bg);
+    box-shadow: 0 0 10px var(--box-shadow-color);
+}
+
+h1, h2, h3 {
+    color: var(--heading-color);
+    border-bottom-color: var(--border-color);
+}
+
+.action-required {
+    color: var(--action-required-color);
+}
+
+.note {
+    background-color: var(--note-bg);
+    border-left-color: var(--note-border);
+    color: var(--note-text);
+}
+
+/* --- Fixed Toggle Button Styling --- */
+.theme-toggle {
+    position: fixed; /* Stays in place when scrolling */
+    top: 20px; /* 20px from the top */
+    right: 20px; /* 20px from the right */
+    background-color: var(--container-bg); /* Match container background */
+    color: var(--heading-color); /* Match heading color */
+    border: 1px solid var(--border-color);
+    border-radius: 50%; /* Makes it a circle */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Ensures it's above other content */
+    box-shadow: 0 2px 5px var(--box-shadow-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .theme-toggle:hover {
+        background-color: var(--note-bg); /* Slight hover effect */
+        color: var(--note-border); /* Change icon color on hover */
+    }
+
+    /* Icon visibility */
+    .theme-toggle .moon-icon {
+        display: none; /* Moon icon hidden by default (light mode) */
+    }
+
+body.dark-mode .theme-toggle .sun-icon {
+    display: none; /* Sun icon hidden in dark mode */
+}
+
+body.dark-mode .theme-toggle .moon-icon {
+    display: block; /* Moon icon visible in dark mode */
+}

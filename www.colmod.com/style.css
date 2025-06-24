@@ -1,0 +1,406 @@
+/* Universal Box-Sizing for consistent layout calculation */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* --- CSS Variables for Theming --- */
+/* Default (Light Mode) Colors */
+:root {
+    --bg-color-main: #f9f9f9; /* General background for legal docs */
+    --text-color-main: #333; /* General text for legal docs */
+    --container-bg-main: #fff; /* Container background for legal docs */
+    --heading-color-main: #2c3e50; /* Headings for legal docs */
+    --border-color-main: #eee; /* Borders for legal docs */
+    --action-required-color: #e74c3c; /* Text for action required */
+    --note-bg-main: #f0f8ff; /* Note box background */
+    --note-border-main: #3498db; /* Note box border */
+    --note-text-main: #34495e; /* Note box text */
+    --box-shadow-color-main: rgba(0,0,0,0.1); /* Box shadow */
+    /* Main Menu Specific Colors - Light Mode equivalent */
+    --bg-color-menu: #ffffff; /* Adjusted from #121212 for light mode */
+    --text-color-menu: #333;
+    --header-bg-menu: #eeeeee; /* Adjusted from #1e1e1e for light mode */
+    --game-title-color: #e74c3c; /* Retained original strong color */
+    --banner-content-bg: rgba(0, 0, 0, 0.2); /* Lighter opacity for light mode */
+    --download-button-bg: #ff6666;
+    --download-button-hover: #ff3333;
+    --footer-bg: transparent; /* Adjusted for consistency */
+    --footer-link-color: #333; /* Adjusted for light mode */
+}
+
+/* Dark Mode Colors */
+body.dark-mode {
+    --bg-color-main: #2c3e50;
+    --text-color-main: #ecf0f1;
+    --container-bg-main: #34495e;
+    --heading-color-main: #ecf0f1;
+    --border-color-main: #44667d;
+    --action-required-color: #ffcccc;
+    --note-bg-main: #4a627a;
+    --note-border-main: #6cb6eb;
+    --note-text-main: #e0e0e0;
+    --box-shadow-color-main: rgba(0,0,0,0.3);
+    /* Main Menu Specific Colors - Dark Mode */
+    --bg-color-menu: #121212; /* Original dark background */
+    --text-color-menu: white;
+    --header-bg-menu: #1e1e1e; /* Original header background */
+    --game-title-color: #ff6666; /* Retained original strong color */
+    --banner-content-bg: rgba(0, 0, 0, 0.5); /* Original dark opacity */
+    --download-button-bg: #ff6666;
+    --download-button-hover: #ff3333;
+    --footer-bg: transparent; /* Consistent */
+    --footer-link-color: white; /* Original white for dark mode */
+}
+
+/* --- General Body & Container Styles (for Legal Docs) --- */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0; /* Changed to 0 as main menu handles overall margin */
+    /* Apply main colors for legal docs */
+    background-color: var(--bg-color-main);
+    color: var(--text-color-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    user-select: none;
+    overflow-x: hidden; /* Added to prevent horizontal scrolling if any residual overflow */
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: var(--container-bg-main);
+    box-shadow: 0 0 10px var(--box-shadow-color-main);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1, h2, h3 {
+    border-bottom: 1px solid var(--border-color-main);
+    padding-bottom: 5px;
+    margin-top: 25px;
+    color: var(--heading-color-main);
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+.action-required {
+    color: var(--action-required-color);
+    background-color: var(--note-bg-main); /* Using note bg for highlight */
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.note {
+    border-left: 4px solid var(--note-border-main);
+    padding: 10px;
+    margin: 15px 0;
+    background-color: var(--note-bg-main);
+    color: var(--note-text-main);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure links in legal docs match text color */
+.container a {
+    color: var(--heading-color-main); /* A slightly more prominent color for links */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+    .container a:hover {
+        color: var(--note-border-main); /* Highlight on hover */
+    }
+
+
+/* --- Main Menu Specific Styles --- */
+/* The main body element will now derive its color from --bg-color-menu for the main menu page */
+/* This specific rule should be after the .container to ensure it applies to the main menu index.html */
+body.main-menu-page { /* Add this class to your index.html body for menu-specific styles */
+    background-color: var(--bg-color-menu);
+    color: var(--text-color-menu);
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--header-bg-menu);
+    transition: background-color 0.3s ease;
+}
+
+.game-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--game-title-color);
+}
+
+.banner {
+    width: 70%;
+    height: 300px;
+    background: url('Resources/image-5uagxxdi.png') no-repeat center center/cover;
+    margin: 20px auto;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    overflow: hidden; /* Ensure content inside banner doesn't overflow rounded corners */
+}
+
+.banner-content {
+    background: var(--banner-content-bg);
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 50%;
+    height: auto; /* Changed from 100% to auto to prevent stretching */
+    display: flex; /* For vertical alignment of description and button */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left; /* Align text within banner content */
+}
+
+.banner .game-title { /* Specific styling for game title inside banner */
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: var(--download-button-bg);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    text-decoration: none; /* Ensure it doesn't look like a typical link */
+}
+
+    .download-button:hover {
+        background-color: var(--download-button-hover);
+    }
+
+.youtube-feed {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.youtube-video {
+    width: 300px; /* Fixed width for desktop */
+    height: 200px; /* Fixed height for desktop */
+    border-radius: 8px; /* Rounded corners for videos */
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+    .youtube-video:hover {
+        transform: scale(1.02); /* Slightly enlarge on hover */
+    }
+
+.footer {
+    width: 100%;
+    padding: 10px;
+    background: var(--footer-bg); /* Use variable */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+    .footer a {
+        text-decoration: none;
+        color: var(--footer-link-color); /* Use variable */
+        transition: color 0.3s ease;
+    }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+    .footer img {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px; /* Rounded corners for social icons */
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .footer img:hover {
+            transform: scale(1.1);
+        }
+
+/* --- Fixed Toggle Button Styling (from previous implementation) --- */
+.theme-toggle {
+    position: fixed; /* Stays in place when scrolling */
+    top: 20px; /* 20px from the top */
+    right: 20px; /* 20px from the right */
+    background-color: var(--container-bg-main); /* Match legal container background */
+    color: var(--heading-color-main); /* Match legal heading color */
+    border: 1px solid var(--border-color-main);
+    border-radius: 50%; /* Makes it a circle */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Ensures it's above other content */
+    box-shadow: 0 2px 5px var(--box-shadow-color-main);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .theme-toggle:hover {
+        background-color: var(--note-bg-main); /* Slight hover effect */
+        color: var(--note-border-main); /* Change icon color on hover */
+    }
+
+    /* Icon visibility */
+    .theme-toggle .moon-icon {
+        display: none; /* Moon icon hidden by default (light mode) */
+    }
+
+body.dark-mode .theme-toggle .sun-icon {
+    display: none; /* Sun icon hidden in dark mode */
+}
+
+body.dark-mode .theme-toggle .moon-icon {
+    display: block; /* Moon icon visible in dark mode */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .banner {
+        width: 90%;
+        height: 250px;
+        padding: 10px;
+    }
+
+    .banner-content {
+        max-width: 90%; /* Allow content to take more width on smaller screens */
+        padding: 10px;
+    }
+
+    .banner .game-title {
+        font-size: 28px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .download-button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    .youtube-feed {
+        width: 95%;
+        flex-direction: column; /* Stack videos vertically */
+        align-items: center;
+    }
+
+    .youtube-video {
+        width: 100%; /* Full width for mobile */
+        max-width: 320px; /* Max width to prevent overly wide videos on very large phones */
+        height: 180px; /* Adjust height for mobile */
+    }
+
+    .footer {
+        flex-direction: column; /* Stack footer links vertically */
+        gap: 10px;
+        font-size: 0.9em;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .game-title {
+        font-size: 20px;
+    }
+
+    .banner {
+        height: 200px;
+    }
+
+        .banner .game-title {
+            font-size: 24px;
+        }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .download-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
