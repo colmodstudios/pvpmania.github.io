@@ -57,7 +57,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 0; /* Changed to 0 as main menu handles overall margin */
+    padding: 0;
     /* Apply main colors for legal docs */
     background-color: var(--bg-color-main);
     color: var(--text-color-main);
@@ -150,8 +150,6 @@ em {
 
 
 /* --- Main Menu Specific Styles --- */
-/* The main body element will now derive its color from --bg-color-menu for the main menu page */
-/* This specific rule should be after the .container to ensure it applies to the main menu index.html */
 body.main-menu-page { /* Add this class to your index.html body for menu-specific styles */
     background-color: var(--bg-color-menu);
     color: var(--text-color-menu);
@@ -175,8 +173,10 @@ body.main-menu-page { /* Add this class to your index.html body for menu-specifi
 
 .banner {
     width: 70%;
-    height: 300px;
+    min-height: 250px; /* Ensure a minimum height for the banner */
+    padding: 20px; /* Keep padding for content spacing */
     background: url('Resources/image-5uagxxdi.png') no-repeat center center/cover;
+    background-position: center; /* Ensure background image is centered */
     margin: 20px auto;
     border-radius: 10px;
     position: relative;
@@ -184,24 +184,24 @@ body.main-menu-page { /* Add this class to your index.html body for menu-specifi
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px;
-    overflow: hidden; /* Ensure content inside banner doesn't overflow rounded corners */
+    overflow: hidden;
 }
 
 .banner-content {
     background: var(--banner-content-bg);
     padding: 15px;
     border-radius: 5px;
-    max-width: 50%;
-    height: auto; /* Changed from 100% to auto to prevent stretching */
-    display: flex; /* For vertical alignment of description and button */
+    width: 100%; /* Take full width of parent (banner) */
+    max-width: 50%; /* Limit content width on desktop */
+    height: auto;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    text-align: left; /* Align text within banner content */
+    text-align: left;
 }
 
-.banner .game-title { /* Specific styling for game title inside banner */
+.banner .game-title {
     font-size: 36px;
     margin-bottom: 10px;
 }
@@ -222,7 +222,7 @@ body.main-menu-page { /* Add this class to your index.html body for menu-specifi
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 10px;
-    text-decoration: none; /* Ensure it doesn't look like a typical link */
+    text-decoration: none;
 }
 
     .download-button:hover {
@@ -239,32 +239,34 @@ body.main-menu-page { /* Add this class to your index.html body for menu-specifi
 }
 
 .youtube-video {
-    width: 300px; /* Fixed width for desktop */
-    height: 200px; /* Fixed height for desktop */
-    border-radius: 8px; /* Rounded corners for videos */
-    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
 }
 
     .youtube-video:hover {
-        transform: scale(1.02); /* Slightly enlarge on hover */
+        transform: scale(1.02);
     }
 
 .footer {
     width: 100%;
     padding: 10px;
-    background: var(--footer-bg); /* Use variable */
+    background: var(--footer-bg);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
     margin-top: 20px;
     transition: background-color 0.3s ease;
+    flex-wrap: wrap;
 }
 
-    .footer a {
+    .footer a, .footer .copyright-text {
         text-decoration: none;
-        color: var(--footer-link-color); /* Use variable */
+        color: var(--footer-link-color);
         transition: color 0.3s ease;
+        white-space: nowrap;
     }
 
         .footer a:hover {
@@ -274,7 +276,7 @@ body.main-menu-page { /* Add this class to your index.html body for menu-specifi
     .footer img {
         width: 30px;
         height: 30px;
-        border-radius: 5px; /* Rounded corners for social icons */
+        border-radius: 5px;
         transition: transform 0.2s ease-in-out;
     }
 
@@ -282,42 +284,41 @@ body.main-menu-page { /* Add this class to your index.html body for menu-specifi
             transform: scale(1.1);
         }
 
-/* --- Fixed Toggle Button Styling (from previous implementation) --- */
+/* --- Fixed Toggle Button Styling --- */
 .theme-toggle {
-    position: fixed; /* Stays in place when scrolling */
-    top: 20px; /* 20px from the top */
-    right: 20px; /* 20px from the right */
-    background-color: var(--container-bg-main); /* Match legal container background */
-    color: var(--heading-color-main); /* Match legal heading color */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--container-bg-main);
+    color: var(--heading-color-main);
     border: 1px solid var(--border-color-main);
-    border-radius: 50%; /* Makes it a circle */
+    border-radius: 50%;
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 1000; /* Ensures it's above other content */
+    z-index: 1000;
     box-shadow: 0 2px 5px var(--box-shadow-color-main);
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
     .theme-toggle:hover {
-        background-color: var(--note-bg-main); /* Slight hover effect */
-        color: var(--note-border-main); /* Change icon color on hover */
+        background-color: var(--note-bg-main);
+        color: var(--note-border-main);
     }
 
-    /* Icon visibility */
     .theme-toggle .moon-icon {
-        display: none; /* Moon icon hidden by default (light mode) */
+        display: none;
     }
 
 body.dark-mode .theme-toggle .sun-icon {
-    display: none; /* Sun icon hidden in dark mode */
+    display: none;
 }
 
 body.dark-mode .theme-toggle .moon-icon {
-    display: block; /* Moon icon visible in dark mode */
+    display: block;
 }
 
 
@@ -325,42 +326,45 @@ body.dark-mode .theme-toggle .moon-icon {
 @media (max-width: 768px) {
     .banner {
         width: 90%;
-        height: 250px;
-        padding: 10px;
+        min-height: 220px; /* Adjusted min-height for tablets */
+        padding: 15px; /* Adjusted padding for smaller screens */
     }
 
     .banner-content {
-        max-width: 90%; /* Allow content to take more width on smaller screens */
-        padding: 10px;
+        max-width: 100%; /* Allow content to take full width of banner on smaller screens */
+        padding: 10px; /* Reduced padding for mobile */
     }
 
     .banner .game-title {
-        font-size: 28px;
+        font-size: 26px; /* Slightly smaller for 768px breakpoint */
+        margin-bottom: 6px;
     }
 
     .description {
-        font-size: 16px;
+        font-size: 15px; /* Slightly smaller for 768px breakpoint */
+        margin-bottom: 8px;
     }
 
     .download-button {
-        padding: 12px 25px;
-        font-size: 16px;
+        padding: 10px 20px; /* Reduced padding */
+        font-size: 15px; /* Reduced font size */
+        margin-top: 8px;
     }
 
     .youtube-feed {
         width: 95%;
-        flex-direction: column; /* Stack videos vertically */
+        flex-direction: column;
         align-items: center;
     }
 
     .youtube-video {
-        width: 100%; /* Full width for mobile */
-        max-width: 320px; /* Max width to prevent overly wide videos on very large phones */
-        height: 180px; /* Adjust height for mobile */
+        width: 100%;
+        max-width: 320px;
+        height: 180px;
     }
 
     .footer {
-        flex-direction: column; /* Stack footer links vertically */
+        flex-direction: column;
         gap: 10px;
         font-size: 0.9em;
     }
@@ -379,28 +383,23 @@ body.dark-mode .theme-toggle .moon-icon {
 }
 
 @media (max-width: 480px) {
-    .header {
-        padding: 10px;
-    }
-
-    .game-title {
-        font-size: 20px;
-    }
-
     .banner {
-        height: 200px;
+        min-height: 180px; /* Further reduce min-height for very small phones */
+        padding: 8px; /* Further reduce padding */
     }
 
         .banner .game-title {
-            font-size: 24px;
+            font-size: 20px; /* Smaller for 480px breakpoint */
         }
 
     .description {
-        font-size: 14px;
+        font-size: 12px; /* Smaller for 480px breakpoint */
+        margin-bottom: 5px; /* Reduce margin */
     }
 
     .download-button {
-        padding: 10px 20px;
-        font-size: 14px;
+        padding: 8px 15px; /* Even smaller padding */
+        font-size: 12px; /* Even smaller font size */
+        margin-top: 5px; /* Reduce margin */
     }
 }
