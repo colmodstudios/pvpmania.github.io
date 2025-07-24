@@ -4,32 +4,76 @@
 }
 
 /* --- CSS Variables for Theming --- */
-/* Default (Light Mode) Colors */
+/* Default (Light Mode) Colors - Light Blue Theme, Red-Orange Game */
 :root {
-    --bg-color-main: #f9f9f9; /* General background for legal docs */
-    --text-color-main: #333; /* General text for legal docs */
-    --container-bg-main: #fff; /* Container background for legal docs */
-    --heading-color-main: #2c3e50; /* Headings for legal docs */
-    --border-color-main: #eee; /* Borders for legal docs */
-    --action-required-color: #e74c3c; /* Text for action required */
-    --note-bg-main: #f0f8ff; /* Note box background */
-    --note-border-main: #3498db; /* Note box border */
-    --note-text-main: #34495e; /* Note box text */
-    --box-shadow-color-main: rgba(0,0,0,0.1); /* Box shadow */
-    /* Main Menu Specific Colors - Light Mode equivalent */
-    --bg-color-menu: #ffffff; /* Adjusted from #121212 for light mode */
+    /* General site colors for legal docs & overall neutral elements */
+    --bg-color-main: #f9f9f9;
+    --text-color-main: #333;
+    --container-bg-main: #fff;
+    --heading-color-main: #2c3e50;
+    --border-color-main: #eee;
+    --action-required-color: #e74c3c;
+    --note-bg-main: #f0f8ff;
+    --note-border-main: #3498db;
+    --note-text-main: #34495e;
+    --box-shadow-color-main: rgba(0,0,0,0.1);
+
+    /* Main Menu Specific Colors - Light Mode (Light Blue dominant) */
+    --site-bg-menu-start: #e0f7fa; /* Very light blue start */
+    --site-bg-menu-end: #f0f8ff;   /* Another very light blue, almost white end */
     --text-color-menu: #333;
-    --header-bg-menu: #eeeeee; /* Adjusted from #1e1e1e for light mode */
-    --game-title-color: #e74c3c; /* Retained original strong color */
-    --banner-content-bg: rgba(0, 0, 0, 0.2); /* Lighter opacity for light mode */
-    --download-button-bg: #ff6666;
-    --download-button-hover: #ff3333;
-    --footer-bg: transparent; /* Adjusted for consistency */
-    --footer-link-color: #333; /* Adjusted for light mode */
+    --header-bg-menu: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    --nav-link-color: #555;
+    --nav-link-hover-color: #00838f; /* Darker blue for hover */
+    --studio-logo-color: #00bcd4; /* Vibrant light blue for studio name */
+    --game-title-color: #ff4500; /* Orange-red for game titles */
+    --banner-content-bg: rgba(255, 255, 255, 0.85); /* More opaque white for content box */
+    --download-button-bg: #ff6600; /* Orange for download button */
+    --download-button-hover: #e65c00; /* Darker orange */
+    --footer-bg-menu: rgba(255, 255, 255, 0.9);
+    --footer-link-color: #333;
+    --youtube-heading-color: #00bcd4; /* Light blue for YouTube heading */
+
+    /* Canvas Glow Colors (Light Mode) */
+    --canvas-particle-color-1: rgba(0, 188, 212, 0.2); /* Light blue particle */
+    --canvas-particle-color-2: rgba(255, 69, 0, 0.2); /* Orange-red particle */
+    --canvas-line-color: rgba(0, 188, 212, 0.15); /* Faint light blue lines */
+    --canvas-shadow-color: rgba(0, 188, 212, 0.3); /* Blue glow for lines/mouse interaction */
+
+    /* Theme Toggle Button colors (direct control) */
+    --theme-toggle-bg: #00bcd4; /* Example: A light blue for the button's default state */
+    --theme-toggle-hover-bg: #00838f; /* Example: A darker blue for the button's hover state */
+
+    /* Game Card specific colors (for index.html featured section) */
+    --game-card-bg: rgba(255, 255, 255, 0.9); /* White background for cards */
+    --game-card-text: #333;
+    --game-card-title-color: #00bcd4; /* Light blue for card titles */
+    --game-card-button-bg: #ff6600;
+    --game-card-button-hover: #e65c00;
+    --game-card-shadow: rgba(0,0,0,0.15);
+
+    /* Game Detail Page specific colors */
+    --game-detail-bg: rgba(255, 255, 255, 0.85); /* Background for detail sections */
+    --game-detail-text: #333;
+    --game-detail-heading: #ff4500; /* Orange-red for detail headings */
+    --game-detail-list-marker: #ff6600; /* Orange for list markers */
+
+    /* Game Library Page Card specific colors (new, for games/index.html) */
+    --library-card-bg: rgba(0, 0, 0, 0.8); /* Dark background for library cards */
+    --library-card-text: #f0f0f0; /* Light text for library cards */
+    --library-card-title-color: #d40000; /* Light blue title for library cards */
+    --library-card-button-bg: #00bcd4; /* Blue button for library cards */
+    --library-card-button-hover: #00838f; /* Darker blue button hover */
+    --library-card-shadow: rgba(0,0,0,0.4);
+
+    /* About Page specific colors */
+    --about-bg: rgba(255, 255, 255, 0.85); /* Background for about section */
+    --about-text: #333;
 }
 
-/* Dark Mode Colors */
+/* Dark Mode Colors - Dark Blue Theme, Red-Orange Game */
 body.dark-mode {
+    /* General site colors for legal docs & overall neutral neutral elements */
     --bg-color-main: #2c3e50;
     --text-color-main: #ecf0f1;
     --container-bg-main: #34495e;
@@ -40,36 +84,78 @@ body.dark-mode {
     --note-border-main: #6cb6eb;
     --note-text-main: #e0e0e0;
     --box-shadow-color-main: rgba(0,0,0,0.3);
-    /* Main Menu Specific Colors - Dark Mode */
-    --bg-color-menu: #121212; /* Original dark background */
+
+    /* Main Menu Specific Colors - Dark Mode (Dark Blue dominant) */
+    --site-bg-menu-start: #0f1c2d; /* Dark blue start */
+    --site-bg-menu-end: #050a10;   /* Even darker blue end */
     --text-color-menu: white;
-    --header-bg-menu: #1e1e1e; /* Original header background */
-    --game-title-color: #ff6666; /* Retained original strong color */
-    --banner-content-bg: rgba(0, 0, 0, 0.5); /* Original dark opacity */
-    --download-button-bg: #ff6666;
-    --download-button-hover: #ff3333;
-    --footer-bg: transparent; /* Consistent */
-    --footer-link-color: white; /* Original white for dark mode */
+    --header-bg-menu: rgba(0, 0, 0, 0.8); /* Transparent black */
+    --nav-link-color: #f0f0f0;
+    --nav-link-hover-color: #4dd0e1; /* Lighter blue */
+    --studio-logo-color: #00bcd4; /* Same vibrant light blue */
+    --game-title-color: #ff4500; /* Same orange-red */
+    --banner-content-bg: rgba(0, 0, 0, 0.7); /* Darker opaque for content box */
+    --download-button-bg: #ff6600;
+    --download-button-hover: #e65c00;
+    --footer-bg-menu: rgba(0, 0, 0, 0.8);
+    --footer-link-color: white;
+    --youtube-heading-color: #4dd0e1; /* Lighter blue for YouTube heading */
+
+    /* Canvas Glow Colors (Dark Mode) */
+    --canvas-particle-color-1: rgba(0, 188, 212, 0.3); /* Light blue particle */
+    --canvas-particle-color-2: rgba(255, 69, 0, 0.3); /* Orange-red particle */
+    --canvas-line-color: rgba(0, 188, 212, 0.2); /* More visible light blue lines */
+    --canvas-shadow-color: rgba(0, 188, 212, 0.5); /* Stronger blue glow */
+
+    /* Theme Toggle Button colors (direct control) */
+    --theme-toggle-bg: #4dd0e1; /* Example: A lighter blue for dark mode */
+    --theme-toggle-hover-bg: #26a69a; /* Example: A teal for dark mode hover */
+
+    /* Game Card specific colors (for index.html featured section) */
+    --game-card-bg: rgba(0, 0, 0, 0.7); /* Dark background for cards */
+    --game-card-text: #f0f0f0;
+    --game-card-title-color: #4dd0e1; /* Lighter blue for card titles */
+    --game-card-button-bg: #ff6600;
+    --game-card-button-hover: #e65c00;
+    --game-card-shadow: rgba(0,0,0,0.4);
+
+    /* Game Detail Page specific colors */
+    --game-detail-bg: rgba(0, 0, 0, 0.7);
+    --game-detail-text: #ecf0f1;
+    --game-detail-heading: #ff4500;
+    --game-detail-list-marker: #ff6600;
+
+    /* Game Library Page Card specific colors (new, for games/index.html) */
+    --library-card-bg: rgba(0, 0, 0, 0.9); /* Even darker background for library cards in dark mode */
+    --library-card-text: #ffffff; /* White text for library cards in dark mode */
+    --library-card-title-color: #4dd0e1; /* Lighter blue title for library cards in dark mode */
+    --library-card-button-bg: #4dd0e1; /* Lighter blue button for library cards in dark mode */
+    --library-card-button-hover: #26a69a; /* Darker teal button hover */
+    --library-card-shadow: rgba(0,0,0,0.6);
+
+    /* About Page specific colors */
+    --about-bg: rgba(0, 0, 0, 0.7);
+    --about-text: #ecf0f1;
 }
 
-/* --- General Body & Container Styles (for Legal Docs) --- */
+
+/* --- General Body & Container Styles (for Legal Docs - kept for other pages) --- */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Default body font */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    /* Apply main colors for legal docs */
-    background-color: var(--bg-color-main);
-    color: var(--text-color-main);
+    background-color: var(--bg-color-main); /* Default for non-main-menu pages */
+    color: var(--text-color-main); /* Default for non-main-menu pages */
     transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE/Edge */
     user-select: none;
-    overflow-x: hidden; /* Added to prevent horizontal scrolling if any residual overflow */
+    overflow-x: hidden;
 }
 
-.container {
+.container { /* For legal docs */
     max-width: 900px;
     margin: 20px auto;
     padding: 30px;
@@ -79,7 +165,7 @@ body {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-h1, h2, h3 {
+h1, h2, h3 { /* Applies to legal docs headings */
     border-bottom: 1px solid var(--border-color-main);
     padding-bottom: 5px;
     margin-top: 25px;
@@ -87,43 +173,19 @@ h1, h2, h3 {
     transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
-h1 {
-    font-size: 2em;
-}
+h1 { font-size: 2em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.3em; }
 
-h2 {
-    font-size: 1.6em;
-}
-
-h3 {
-    font-size: 1.3em;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-
-li {
-    margin-bottom: 5px;
-}
-
-strong {
-    font-weight: bold;
-}
-
-em {
-    font-style: italic;
-}
+p { margin-bottom: 10px; }
+ul { list-style-type: disc; margin-left: 20px; margin-bottom: 10px; }
+li { margin-bottom: 5px; }
+strong { font-weight: bold; }
+em { font-style: italic; }
 
 .action-required {
     color: var(--action-required-color);
-    background-color: var(--note-bg-main); /* Using note bg for highlight */
+    background-color: var(--note-bg-main);
     padding: 2px 5px;
     border-radius: 3px;
 }
@@ -137,269 +199,872 @@ em {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-/* Ensure links in legal docs match text color */
 .container a {
-    color: var(--heading-color-main); /* A slightly more prominent color for links */
+    color: var(--note-border-main);
     text-decoration: underline;
     transition: color 0.3s ease;
 }
-
-    .container a:hover {
-        color: var(--note-border-main); /* Highlight on hover */
-    }
-
-
-/* --- Main Menu Specific Styles --- */
-body.main-menu-page { /* Add this class to your index.html body for menu-specific styles */
-    background-color: var(--bg-color-menu);
-    color: var(--text-color-menu);
-    text-align: center;
+.container a:hover {
+    color: var(--heading-color-main);
 }
 
-.header {
+
+/* --- Main Menu & Game Detail Page Specific Styles --- */
+body.main-menu-page {
+    background: linear-gradient(135deg, var(--site-bg-menu-start), var(--site-bg-menu-end)); /* Gradient background */
+    color: var(--text-color-menu);
+    text-align: center;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif; /* Ensure Arial for general text on main menu */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex; /* Use flex to manage layout of direct children */
+    flex-direction: column; /* Stack children vertically */
+}
+
+/* Full-page Canvas */
+#full-page-canvas {
+    position: fixed; /* Fixed to viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind all content */
+    pointer-events: none; /* Allow clicks to pass through */
+    opacity: 0.8; /* Slightly transparent to let background gradient show */
+}
+
+
+/* Header & Navigation */
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px 30px;
     background-color: var(--header-bg-menu);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Softer shadow */
     transition: background-color 0.3s ease;
-}
-
-.game-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--game-title-color);
-}
-
-.banner {
-    width: 70%;
-    min-height: 250px; /* Ensure a minimum height for the banner */
-    padding: 20px; /* Keep padding for content spacing */
-    background: url('Resources/image-5uagxxdi.png') no-repeat center center/cover;
-    background-position: center; /* Ensure background image is centered */
-    margin: 20px auto;
-    border-radius: 10px;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    overflow: hidden;
+    z-index: 20; /* Ensure header is on top */
 }
 
-.banner-content {
-    background: var(--banner-content-bg);
-    padding: 15px;
-    border-radius: 5px;
-    width: 100%; /* Take full width of parent (banner) */
-    max-width: 50%; /* Limit content width on desktop */
-    height: auto;
+.studio-logo { /* Colmod title in header */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--studio-logo-color); /* Light blue for studio name */
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.7); /* Light blue glow */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.studio-logo:hover {
+    color: var(--nav-link-hover-color);
+    text-shadow: 0 0 12px rgba(0, 188, 212, 0.9);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between nav items */
+}
+
+.main-nav a, .preferences-btn { /* Style for nav links and preferences button */
+    font-family: Arial, sans-serif; /* Keep Arial for nav text */
+    color: var(--nav-link-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.main-nav a:hover, .preferences-btn:hover {
+    color: var(--nav-link-hover-color);
+    text-shadow: 0 0 5px var(--nav-link-hover-color);
+}
+
+/* Floating Buttons Container */
+.floating-buttons-container {
+    position: fixed;
+    top: 50%; /* Vertically center */
+    right: 20px; /* Distance from right edge */
+    transform: translateY(-50%) translateX(calc(100% + 20px)); /* Start off-screen right */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Space between buttons */
+    z-index: 99; /* Below header, above content */
+    transition: transform 0.4s ease-out; /* Slide animation */
+    pointer-events: none; /* Initially non-interactive */
+}
+
+.floating-buttons-container.active {
+    transform: translateY(-50%) translateX(0); /* Slide into view */
+    pointer-events: auto; /* Make interactive when active */
+}
+
+/* Theme Toggle Button (now inside floating-buttons-container) */
+.theme-toggle {
+    background-color: var(--theme-toggle-bg); /* Use its own dedicated variable */
+    color: white;
+    border: none; /* No border */
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.theme-toggle:hover {
+    background-color: var(--theme-toggle-hover-bg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05); /* Subtle hover effect */
+}
+.theme-toggle svg {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.theme-toggle .moon-icon { display: block; }
+.theme-toggle .sun-icon { display: none; }
+body.dark-mode .theme-toggle .moon-icon { display: none; }
+body.dark-mode .theme-toggle .sun-icon { display: block; }
+
+
+/* Featured Games Section (on index.html) */
+.featured-games-section {
+    flex-grow: 1; /* Allows section to take up available space */
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 20px auto; /* Center the section */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for content area */
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For z-index over canvas */
+    z-index: 1;
+}
+
+body.dark-mode .featured-games-section {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Heading for Featured Games and Game Library and About */
+.section-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: var(--studio-logo-color); /* Studio blue for heading */
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Game Grid for Featured Games and Game Library */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between grid items */
+    max-width: 1000px; /* Limit grid width within section */
+    margin: 0 auto; /* Center the grid */
+}
+
+/* Base Game Card Styling (Applies to both, overridden by more specific rules) */
+.game-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.game-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Styling for Game Cards on the MAIN PAGE (Featured Games Section) */
+.featured-games-section .game-card {
+    background-color: var(--game-card-bg); /* White background for cards */
+    box-shadow: 0 5px 18px var(--game-card-shadow); /* Card shadow */
+}
+
+.featured-games-section .game-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent look */
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.featured-games-section .game-card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left; /* Align text left within card */
+}
+
+.featured-games-section .game-card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8em;
+    margin: 0 0 10px;
+    color: var(--game-card-title-color); /* Light blue for card titles */
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.4);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.featured-games-section .game-card-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95em;
+    color: var(--game-card-text); /* Card text color */
+    margin: 0 0 15px;
+    flex-grow: 1; /* Allow description to take space */
+}
+
+.featured-games-section .game-card-button {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--game-card-button-bg);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    align-self: center; /* Center the button */
+    width: calc(100% - 30px); /* Adjust width to account for padding */
+    max-width: 200px; /* Max width for button */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.featured-games-section .game-card-button:hover {
+    background-color: var(--game-card-button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Specific styling for Pvpmania card on the MAIN PAGE to make it stand out */
+.featured-games-section .game-card.featured-pvpmania .game-card-title {
+    color: var(--game-title-color); /* Red-orange for Pvpmania title */
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.7);
+}
+.featured-games-section .game-card.featured-pvpmania .game-card-button {
+    background-color: var(--download-button-bg); /* Red-orange for Pvpmania button */
+    box-shadow: 0 5px 15px rgba(255, 69, 0, 0.5);
+}
+.featured-games-section .game-card.featured-pvpmania .game-card-button:hover {
+    background-color: var(--download-button-hover);
+    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.7);
+}
+
+
+/* Styling for Game Cards on the GAMES LIBRARY PAGE (games/index.html) */
+.games-library-page .games-library-section {
+    background-color: var(--game-card-bg); /* Use the general game card background for the section */
+}
+
+.games-library-page .game-card {
+    background-color: var(--library-card-bg); /* Dark background for library cards */
+    color: var(--library-card-text); /* Light text for library cards */
+    box-shadow: 0 5px 18px var(--library-card-shadow); /* Library card shadow */
+    text-align: center; /* Center content within library card */
+    padding: 20px; /* Add padding for content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.games-library-page .game-card img {
+    width: 150px; /* Smaller, centered thumbnail */
+    height: 150px;
+    object-fit: contain; /* Ensure image fits without cropping */
+    border-radius: 8px;
+    margin: 0 auto 15px; /* Center image and add bottom margin */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.games-library-page .game-card-content {
+    padding: 0; /* Remove extra padding from content wrapper */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Center content vertically within card */
+}
+
+.games-library-page .game-card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8em;
+    margin: 0 0 5px;
+    color: var(--library-card-title-color); /* Light blue title for library cards */
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.4);
+}
+
+.games-library-page .game-card-meta { /* New style for Genre/Platform */
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85em;
+    opacity: 0.7;
+    margin-bottom: 10px;
+    color: var(--library-card-text);
+}
+
+.games-library-page .game-card-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95em;
+    color: var(--library-card-text);
+    margin: 0 0 15px;
+    flex-grow: 1;
+    text-align: center; /* Center description text */
+}
+
+.games-library-page .game-card-button {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--library-card-button-bg); /* Blue button for library cards */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    align-self: center;
+    width: calc(100% - 30px);
+    max-width: 200px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.games-library-page .game-card-button:hover {
+    background-color: var(--library-card-button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Game Detail Page Specific Styles (remains the same) */
+body.game-detail-page .main-header {
+    margin-bottom: 0;
+}
+
+.game-detail-section {
+    flex-grow: 1;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: var(--game-detail-bg);
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
     text-align: left;
 }
 
-.banner .game-title {
-    font-size: 36px;
+.game-detail-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color-main);
+}
+
+.game-detail-banner-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    object-fit: cover;
+}
+
+.game-detail-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5em;
     margin-bottom: 10px;
+    color: var(--game-title-color);
+    text-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
 }
 
-.description {
-    font-size: 18px;
-    margin-bottom: 10px;
+.game-detail-tagline {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    color: var(--text-color-menu);
+    opacity: 0.9;
 }
 
-.download-button {
-    display: inline-block;
-    background-color: var(--download-button-bg);
-    color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-    text-decoration: none;
+.game-detail-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    color: var(--game-detail-heading);
+    border-bottom: 2px solid var(--game-detail-heading);
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(255, 69, 0, 0.4);
 }
 
-    .download-button:hover {
-        background-color: var(--download-button-hover);
-    }
+.game-description-full p,
+.system-requirements p {
+    font-family: Arial, sans-serif;
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: var(--game-detail-text);
+    margin-bottom: 15px;
+}
 
-.youtube-feed {
+.game-features ul,
+.system-requirements ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.game-features li,
+.system-requirements li {
+    font-family: Arial, sans-serif;
+    font-size: 1.05em;
+    color: var(--game-detail-text);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.game-features li::before,
+.system-requirements li::before {
+    content: '•';
+    color: var(--game-detail-list-marker);
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* YouTube Feed Section (remains the same) */
+.youtube-section {
     width: 80%;
-    margin: 20px auto;
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--site-bg-menu-start);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--box-shadow-color-main);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.youtube-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
+    color: var(--youtube-heading-color);
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px var(--box-shadow-color-main);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.youtube-feed-container {
+    /* No specific flex/grid here, the JS will create a wrapper inside */
+}
+
+.youtube-feed-container-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .youtube-video {
-    width: 300px;
-    height: 200px;
+    width: 320px;
+    height: 180px;
     border-radius: 8px;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px var(--box-shadow-color-main);
 }
 
-    .youtube-video:hover {
-        transform: scale(1.02);
-    }
+.youtube-video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px var(--box-shadow-color-main);
+}
 
-.footer {
-    width: 100%;
-    padding: 10px;
-    background: var(--footer-bg);
+.loading-message {
+    color: var(--text-color-menu);
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+
+
+/* Footer */
+.main-footer {
+    padding: 20px;
+    background: var(--footer-bg-menu);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin-top: 20px;
     transition: background-color 0.3s ease;
-    flex-wrap: wrap;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    font-family: Arial, sans-serif;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
 }
 
-    .footer a, .footer .copyright-text {
-        text-decoration: none;
-        color: var(--footer-link-color);
-        transition: color 0.3s ease;
-        white-space: nowrap;
-    }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-    .footer img {
-        width: 30px;
-        height: 30px;
-        border-radius: 5px;
-        transition: transform 0.2s ease-in-out;
-    }
-
-        .footer img:hover {
-            transform: scale(1.1);
-        }
-
-/* --- Fixed Toggle Button Styling --- */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--container-bg-main);
-    color: var(--heading-color-main);
-    border: 1px solid var(--border-color-main);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 2px 5px var(--box-shadow-color-main);
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    gap: 15px;
 }
 
-    .theme-toggle:hover {
-        background-color: var(--note-bg-main);
-        color: var(--note-border-main);
-    }
-
-    .theme-toggle .moon-icon {
-        display: none;
-    }
-
-body.dark-mode .theme-toggle .sun-icon {
-    display: none;
+.footer-links-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    order: 1;
 }
 
-body.dark-mode .theme-toggle .moon-icon {
-    display: block;
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.social-links img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.2s ease-in-out, filter 0.2s ease;
+}
+.social-links img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px var(--studio-logo-color));
+}
+
+.legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.legal-links a {
+    color: var(--footer-link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.legal-links a:hover {
+    text-decoration: underline;
+    color: var(--studio-logo-color);
+}
+
+.copyright-text {
+    opacity: 0.8;
+    order: 2;
+}
+
+/* --- About Section Styles (Moved from about-style.css) --- */
+.about-section {
+    flex-grow: 1; /* Allows section to take up available space */
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 900px; /* Adjusted max-width for about content */
+    margin: 20px auto; /* Center the section */
+    background-color: var(--about-bg); /* Use about-specific background */
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For z-index over canvas */
+    z-index: 1;
+}
+
+.about-content {
+    text-align: left; /* Align text left within about content box */
+    color: var(--about-text);
+    transition: color 0.3s ease;
+}
+
+.about-logo {
+    width: 200px; /* Size of the logo */
+    height: 200px;
+    object-fit: contain;
+    margin: 0 auto 30px; /* Center logo and add bottom margin */
+    display: block; /* Make it a block element to center with margin:auto */
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.about-content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.about-content strong {
+    color: var(--studio-logo-color); /* Highlight strong text with studio blue */
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
 }
 
 
 /* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-    .banner {
+@media (max-width: 1024px) {
+    .main-header {
+        padding: 15px 20px;
+    }
+    .main-nav {
+        gap: 20px;
+    }
+    .floating-buttons-container {
+        right: 10px;
+        transform: translateY(-50%) translateX(calc(100% + 10px));
+    }
+    .floating-buttons-container.active {
+        transform: translateY(-50%) translateX(0);
+    }
+    .featured-games-section, .games-library-section, .game-detail-section, .about-section { /* Apply to all content sections */
         width: 90%;
-        min-height: 220px; /* Adjusted min-height for tablets */
-        padding: 15px; /* Adjusted padding for smaller screens */
+        padding: 40px 15px;
     }
-
-    .banner-content {
-        max-width: 100%; /* Allow content to take full width of banner on smaller screens */
-        padding: 10px; /* Reduced padding for mobile */
+    .section-heading, .game-detail-title { /* Apply to all main headings */
+        font-size: 2.2em;
     }
-
-    .banner .game-title {
-        font-size: 26px; /* Slightly smaller for 768px breakpoint */
-        margin-bottom: 6px;
+    .games-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-
-    .description {
-        font-size: 15px; /* Slightly smaller for 768px breakpoint */
-        margin-bottom: 8px;
+    .game-card-title {
+        font-size: 1.6em;
     }
-
-    .download-button {
-        padding: 10px 20px; /* Reduced padding */
-        font-size: 15px; /* Reduced font size */
-        margin-top: 8px;
-    }
-
-    .youtube-feed {
-        width: 95%;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .youtube-video {
-        width: 100%;
-        max-width: 320px;
-        height: 180px;
-    }
-
-    .footer {
-        flex-direction: column;
-        gap: 10px;
+    .game-card-description {
         font-size: 0.9em;
     }
+    .game-card-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .youtube-heading {
+        font-size: 2em;
+    }
+    .game-detail-title {
+        font-size: 3em;
+    }
+    .game-detail-tagline {
+        font-size: 1.1em;
+    }
+    .game-detail-content h2 {
+        font-size: 1.8em;
+    }
+    .game-description-full p,
+    .system-requirements p,
+    .game-features li,
+    .system-requirements li,
+    .about-content p { /* Added about-content p here */
+        font-size: 1em;
+    }
+}
 
-    .theme-toggle {
-        top: 10px;
-        right: 10px;
-        width: 35px;
-        height: 35px;
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .studio-logo {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    .main-nav {
+        margin-bottom: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .main-nav a, .preferences-btn {
+        font-size: 1em;
+    }
+    .floating-buttons-container {
+        top: auto;
+        bottom: 20px;
+        transform: translateX(calc(100% + 20px));
+        flex-direction: row;
+        right: 20px;
+        left: auto;
+        width: auto;
+        padding: 10px;
+        background-color: var(--header-bg-menu);
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    .floating-buttons-container.active {
+        transform: translateX(0);
     }
 
-        .theme-toggle svg {
-            width: 20px;
-            height: 20px;
-        }
+    .featured-games-section, .games-library-section, .game-detail-section, .about-section {
+        width: 95%;
+        padding: 30px 10px;
+    }
+    .section-heading, .game-detail-title {
+        font-size: 1.8em;
+    }
+    .games-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+    .game-card-content {
+        text-align: center;
+        align-items: center;
+    }
+    .youtube-section {
+        width: 95%;
+        margin: 30px auto;
+    }
+    .youtube-heading {
+        font-size: 1.8em;
+    }
+    .youtube-feed-container-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .youtube-video {
+        width: 100%;
+        max-width: 340px;
+        height: 190px;
+    }
+    .game-detail-banner-image {
+        max-width: 90%;
+    }
+    .game-detail-title {
+        font-size: 2.5em;
+    }
+    .game-detail-tagline {
+        font-size: 1em;
+    }
+    .game-detail-content h2 {
+        font-size: 1.5em;
+    }
+    .about-logo {
+        width: 150px; /* Smaller logo on mobile */
+        height: 150px;
+    }
 }
 
 @media (max-width: 480px) {
-    .banner {
-        min-height: 180px; /* Further reduce min-height for very small phones */
-        padding: 8px; /* Further reduce padding */
+    .main-header {
+        padding: 10px;
+    }
+    .studio-logo {
+        font-size: 20px;
+    }
+    .main-nav {
+        gap: 10px;
+    }
+    .main-nav a, .preferences-btn {
+        font-size: 0.95em;
+    }
+    .floating-buttons-container {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+        padding: 8px;
+    }
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+    }
+    .theme-toggle svg {
+        width: 24px;
+        height: 24px;
     }
 
-        .banner .game-title {
-            font-size: 20px; /* Smaller for 480px breakpoint */
-        }
-
-    .description {
-        font-size: 12px; /* Smaller for 480px breakpoint */
-        margin-bottom: 5px; /* Reduce margin */
+    .featured-games-section, .games-library-section, .game-detail-section, .about-section {
+        padding: 20px 10px;
+    }
+    .section-heading, .game-detail-title {
+        font-size: 1.5em;
+    }
+    .game-card-title {
+        font-size: 1.4em;
+    }
+    .game-card-description {
+        font-size: 0.85em;
+    }
+    .game-card-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
     }
 
-    .download-button {
-        padding: 8px 15px; /* Even smaller padding */
-        font-size: 12px; /* Even smaller font size */
-        margin-top: 5px; /* Reduce margin */
+    .youtube-section {
+        margin: 20px auto;
+    }
+    .youtube-heading {
+        font-size: 1.4em;
+    }
+    .youtube-video {
+        height: 160px;
+    }
+
+    .main-footer {
+        padding: 10px;
+        font-size: 0.8em;
+    }
+    .social-links img {
+        width: 30px;
+        height: 30px;
+    }
+    .legal-links a {
+        font-size: 0.8em;
+    }
+    .game-detail-title {
+        font-size: 2em;
+    }
+    .game-detail-tagline {
+        font-size: 0.9em;
+    }
+    .game-detail-content h2 {
+        font-size: 1.3em;
     }
 }

@@ -1,26 +1,27 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colmod Studios</title>
+    <title>Colmod Studio - Game Library</title>
 
-    <link rel="icon" type="image/png" href="/Resources/20230209_081850_0000.png">
+    <link rel="icon" type="image/png" href="../Resources/20230209_081850_0000.png">
     <!-- Google Fonts for Orbitron (for headings/titles) and Roboto (for game descriptions/buttons) -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Link to your shared external stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Link to the shared external stylesheet (relative path) -->
+    <link rel="stylesheet" href="../style.css">
 </head>
-<body class="main-menu-page">
+<body class="main-menu-page games-library-page"> <!-- Added games-library-page class -->
     <!-- Full-page Canvas for background animation -->
     <canvas id="full-page-canvas"></canvas>
 
     <header class="main-header">
-        <a href="#" class="studio-logo">COLMOD</a>
+        <a href="../index.html" class="studio-logo">COLMOD</a> <!-- Link back to main page -->
         <nav class="main-nav">
-            <a href="games/index.html">Games</a> <!-- UPDATED LINK HERE -->
-            <a href="about.html">About</a> <!-- Placeholder for About section -->
-            <a href="#contact-info" class="contact-scroll-btn">Contact</a>
+            <a href="../index.html">Home</a>
+            <a href="#">Games</a> <!-- Current page link, no href needed -->
+            <a href="../about.html">About</a>
+            <a href="../index.html#contact-info" class="contact-scroll-btn">Contact</a>
             <button id="preferences-btn" class="preferences-btn">Preferences</button>
         </nav>
     </header>
@@ -35,29 +36,12 @@
         <!-- Add more floating preference buttons here if needed -->
     </div>
 
-    <!-- Featured Games Section - REMAINS THE SAME -->
-    <section class="featured-games-section">
-        <h2 class="section-heading">Our Featured Games</h2>
-        <div class="games-grid">
-            <!-- Game Card: Pvpmania (most prominent) -->
-            <article class="game-card featured-pvpmania">
-                <a href="https://gamejolt.com/games/PvpMania/798632" target="_blank" rel="noopener noreferrer">
-                    <img src="Resources/image-5uagxxdi.png" alt="Pvpmania Game Thumbnail">
-                    <div class="game-card-content">
-                        <h3 class="game-card-title">Pvpmania</h3>
-                        <p class="game-card-description">Engage in real-time tank combat with unique vehicles and tactical depth. Conquer the battlefield in this evolving, action-packed experience in development.</p>
-                        <button class="game-card-button">Download Now</button>
-                    </div>
-                </a>
-            </article>
-        </div>
-    </section>
-
-    <section id="youtube-section" class="youtube-section">
-        <h2 class="youtube-heading">Latest from Our YouTube Channel</h2>
-        <div id="youtube-feed" class="youtube-feed-container">
-            <!-- YouTube videos will be dynamically loaded here by script.js -->
-            <p class="loading-message">Loading videos...</p>
+    <!-- Games Library Section -->
+    <section class="games-library-section">
+        <h2 class="section-heading">Our Full Game Library</h2>
+        <div id="games-container" class="games-grid">
+            <!-- Game cards will be dynamically loaded here by script.js -->
+            <p class="loading-message">Loading games...</p>
         </div>
     </section>
 
@@ -66,19 +50,19 @@
             <div class="footer-links-group">
                 <div class="social-links">
                     <a href="https://discord.gg/6beC2ayze6" title="Join our Discord" target="_blank" rel="noopener noreferrer">
-                        <img src="Resources/discord_logo.png" alt="Discord">
+                        <img src="../Resources/discord_logo.png" alt="Discord">
                     </a>
                     <a href="mailto:colmodstudios@gmail.com" title="Contact us via Email">
-                        <img src="Resources/email_logo.png" alt="Email">
+                        <img src="../Resources/email_logo.png" alt="Email">
                     </a>
                     <a href="https://www.youtube.com/@colmodstudios" title="View our Youtube" target="_blank" rel="noopener noreferrer">
-                        <img src="Resources/youtube_logo.png" alt="Youtube">
+                        <img src="../Resources/youtube_logo.png" alt="Youtube">
                     </a>
                 </div>
                 <div class="legal-links">
-                    <a href="legal_docs/eula.html" target="_blank">EULA</a>
-                    <a href="legal_docs/policy.html" target="_blank">Privacy Policy</a>
-                    <a href="legal_docs/terms.html" target="_blank">Terms of Service</a>
+                    <a href="../legal_docs/eula.html" target="_blank">EULA</a>
+                    <a href="../legal_docs/policy.html" target="_blank">Privacy Policy</a>
+                    <a href="../legal_docs/terms.html" target="_blank">Terms of Service</a>
                     <a href="https://assetstore.unity.com/publishers/77222" target="_blank">Unity Profile</a>
                 </div>
             </div>
@@ -86,7 +70,7 @@
         </div>
     </footer>
 
-    
-    <script src="script.js"></script>
+    <!-- Link to the shared external JavaScript file (relative path) -->
+    <script src="../script.js"></script>
 </body>
 </html>
