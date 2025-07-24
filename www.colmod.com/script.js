@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- YouTube Feed Logic (only runs if #youtube-section exists) ---
-    const API_KEY = 'YOUR_YOUTUBE_API_KEY_HERE'; // <--- IMPORTANT: Replace with your actual YouTube Data API v3 Key
+    const API_KEY = 'AIzaSyCctdfbNDGSTgBvPfuqezsfwbEX7hj6EMc'; // <--- IMPORTANT: Replace with your actual YouTube Data API v3 Key
     const CHANNEL_ID = 'UCrDZ6OmnAz4gCnP4VwNzIHA'; // Colmod Studios Channel ID
     const youtubeFeedSection = document.getElementById('youtube-section');
     const youtubeFeedContainer = document.getElementById('youtube-feed');
