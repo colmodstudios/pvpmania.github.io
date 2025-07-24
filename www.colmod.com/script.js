@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- YouTube Feed Logic (only runs if #youtube-section exists) ---
-    const API_KEY = 'AIzaSyCctdfbNDGSTgBvPfuqezsfwbEX7hj6EMc'; // <--- IMPORTANT: Replace with your actual YouTube Data API v3 Key
+    const API_KEY = 'YOUR_YOUTUBE_API_KEY_HERE'; // <--- IMPORTANT: Replace with your actual YouTube Data API v3 Key
     const CHANNEL_ID = 'UCrDZ6OmnAz4gCnP4VwNzIHA'; // Colmod Studios Channel ID
     const youtubeFeedSection = document.getElementById('youtube-section');
     const youtubeFeedContainer = document.getElementById('youtube-feed');
@@ -128,20 +128,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const gamesContainer = document.getElementById('games-container');
     const loadingMessageGames = gamesContainer ? gamesContainer.querySelector('.loading-message') : null;
 
-    if (gamesContainer && window.location.pathname.includes('/games/index.html')) {
+    // Changed the condition to check for the body class 'games-library-page'
+    if (gamesContainer && body.classList.contains('games-library-page')) {
         if (loadingMessageGames) loadingMessageGames.remove(); // Remove loading message
 
-        // Directly create the Pvpmania game card
+        // Hardcoded Pvpmania data for the games library page
+        const pvpmaniaData = {
+            id: "pvpmania",
+            title: "Pvpmania",
+            thumbnail: "../Resources/image-5uagxxdi.png", // Relative path from games/index.html
+            description: "Dive into thrilling real-time combat with unique tanks and strategic gameplay. Dominate the arena in this action-packed experience!",
+            gameJoltLink: "https://gamejolt.com/games/PvpMania/798632",
+            genre: "Action, PvP",
+            platform: "PC"
+        };
+
+        // Create the Pvpmania game card with the 'featured-pvpmania' class
         const gameCard = document.createElement('article');
-        gameCard.className = 'game-card featured-pvpmania'; // Keep the featured-pvpmania class
+        gameCard.className = 'game-card featured-pvpmania'; // Added 'featured-pvpmania' class
 
         gameCard.innerHTML = `
-            <a href="https://gamejolt.com/games/PvpMania/798632" target="_blank" rel="noopener noreferrer">
-                <img src="../Resources/image-5uagxxdi.png" alt="Pvpmania Game Thumbnail">
+            <a href="${pvpmaniaData.gameJoltLink}" target="_blank" rel="noopener noreferrer">
+                <img src="${pvpmaniaData.thumbnail}" alt="${pvpmaniaData.title} Thumbnail">
                 <div class="game-card-content">
-                    <h3 class="game-card-title">Pvpmania</h3>
-                    <p class="game-card-description">Dive into thrilling real-time combat with unique tanks and strategic gameplay. Dominate the arena in this action-packed experience!</p>
-                    <button class="game-card-button">Play Now</button>
+                    <h3 class="game-card-title">${pvpmaniaData.title}</h3>
+                    <p class="game-card-meta">Genre: ${pvpmaniaData.genre} | Platform: ${pvpmaniaData.platform}</p>
+                    <p class="game-card-description">${pvpmaniaData.description}</p>
+                    <button class="game-card-button">Discover</button>
                 </div>
             </a>
         `;
